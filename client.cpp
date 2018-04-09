@@ -27,13 +27,21 @@ class Client
         //if (my_data->message != "NULL")
         // ClientSocket client_socket(host, 30000);
 
-        ClientSocket client_socket(host, 10020);
+        ClientSocket client_socket("127.0.0.1", 10020);
 
-        std::string reply;
+        //std::string reply;
 
-        client_socket << "Fucking cunt";
-        client_socket >> reply;
-
+        client_socket << "Fcnt";
+       // client_socket >> reply;
+        //cout<<reply;
+        char *buffer = new char[1024];
+        bzero(buffer, MAXRECVLEN);
+        //client_socket >> reply;
+        //cout<<reply;
+        client_socket.receiveMessage();
+        //ofstream myfile;
+        //myfile.open("example.txt");
+        //myfile.write(buffer,100);
         //client_socket << my_data->message;
 
         pthread_exit(NULL);
@@ -70,7 +78,7 @@ class Client
         //td[2].thread_id = 2;
         //td[2].message = (char *)ip2.c_str();
         // cout<<td[2].message;
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 1; i++)
         {
             td[i].thread_id = i;
             td[i].message = (char *)hst[i].c_str();

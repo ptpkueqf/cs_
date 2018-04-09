@@ -89,3 +89,19 @@ int Socket::recv(string &message) const {
         return status;
     }
 }
+
+bool Socket::recvv(void *buf, unsigned int flags) {
+    int totalBytesRead = 0;
+    int bytesRead = 0;
+    do {
+        bytesRead = ::recv(socket_fd, buf, MAXRECVLEN + 1, flags);
+        std::cout << "read " + std::to_string(bytesRead) + " bytes" << std::endl;
+        if (bytesRead < 0) {
+            perror("recv");
+            exit(EXIT_FAILURE);
+        }
+        totalBytesRead += bytesRead;
+    } while (bytesRead >= (MAXRECVLEN + 1));
+
+    return true;
+}

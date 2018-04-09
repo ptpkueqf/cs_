@@ -9,7 +9,7 @@ public:
     ClientSocket(string host, int port);
 
     // Keep read until receive FIN package.
-    void receiveMessage(ofstream &fout);
+    void receiveMessage(/*ofstream &fout*/);
 
     const ClientSocket &operator<<(const string &message) const;
 

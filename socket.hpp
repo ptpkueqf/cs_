@@ -1,5 +1,5 @@
-#ifndef FA17_CS425_MP1_SOCKET_HPP
-#define FA17_CS425_MP1_SOCKET_HPP
+#ifndef _SOCKET_HPP
+#define _SOCKET_HPP
 
 #include <sys/socket.h>
 #include <iostream>
@@ -35,4 +35,4 @@ public:
     bool close(int socketFd);
 };
 
-#endif //FA17_CS425_MP1_SOCKET_HPP
+#endif //_SOCKET_HPP

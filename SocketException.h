@@ -1,5 +1,5 @@
-#ifndef FA17_CS425_MP1_SOCKETEXCEPTION_H
-#define FA17_CS425_MP1_SOCKETEXCEPTION_H
+#ifndef _SOCKETEXCEPTION_H
+#define _SOCKETEXCEPTION_H
 
 #include <string>
 
@@ -19,4 +19,4 @@ private:
     string message;
 };
 
-#endif //FA17_CS425_MP1_SOCKETEXCEPTION_H
+#endif //_SOCKETEXCEPTION_H

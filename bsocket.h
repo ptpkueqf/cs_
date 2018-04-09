@@ -2,8 +2,8 @@
  * Encapsulation of Socket.
  * Refer to http://tldp.org/LDP/LG/issue74/tougher.html.
  */
-#ifndef FA17_CS425_MP1_SOCKET_H
-#define FA17_CS425_MP1_SOCKET_H
+#ifndef nn_dgrep
+#define nn_dgrep
 
 #include <iostream>
 #include <sys/socket.h>
@@ -40,10 +40,12 @@ public:
 
     int recv(string &message) const;
 
+    bool recvv(void *buf, unsigned int flags);
+
 private:
     int socket_fd; // basesocket file descriptor.
     struct sockaddr_in address;
 };
 
 
-#endif //FA17_CS425_MP1_SOCKET_H
+#endif 
